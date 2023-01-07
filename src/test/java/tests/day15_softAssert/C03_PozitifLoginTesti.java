@@ -7,7 +7,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class C03_PozitifLoginTesti {
-    @Test
+    @Test(groups = {"minireg2","smoke"})
     public void test01(){
 
         // 1- https://www.qualitydemy.com/ anasayfasina gidin
@@ -22,8 +22,8 @@ public class C03_PozitifLoginTesti {
         // 4- Kullanici sifresi olarak valid sifre girin
         qualitydemyPage.passwordKutusu.sendKeys("31488081");
         // 5- Login butonuna basarak login olun
-        qualitydemyPage.cookie.click();
-        ReusableMethods.bekle(3);
+        if (qualitydemyPage.cookie.isDisplayed()){qualitydemyPage.cookie.click();
+        }
         qualitydemyPage.loginButonu.click();
         // 6- Basarili olarak giris yapilabildigini test edin
         Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());

@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="belirli package calıstırma">
+    <test name="istenen packageleri calıstırma">
+        <packages>
+            <package name="tests.day15_softAssert"></package>
+        </packages>
+    </test>
+</suite>
