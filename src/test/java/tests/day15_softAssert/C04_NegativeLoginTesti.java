@@ -1,9 +1,10 @@
-package tests.day15;
+package tests.day15_softAssert;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.QualitydemyPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class C04_NegativeLoginTesti {
     // 3 test method'u olusturun
@@ -17,9 +18,13 @@ public class C04_NegativeLoginTesti {
     public void yanlisEmailTesti(){
 
         Driver.getDriver().get("https://www.qualitydemy.com/");
+        ReusableMethods.bekle(3);
+        qualitydemyPage.cookie.click();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("mehmet@abc.com");
         qualitydemyPage.passwordKutusu.sendKeys("31488081");
+        qualitydemyPage.cookie.click();
+        ReusableMethods.bekle(3);
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
@@ -33,6 +38,8 @@ public class C04_NegativeLoginTesti {
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("user_1106147@login.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
+        qualitydemyPage.cookie.click();
+        ReusableMethods.bekle(3);
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
@@ -47,6 +54,8 @@ public class C04_NegativeLoginTesti {
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("mehmet@abc.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
+        qualitydemyPage.cookie.click();
+        ReusableMethods.bekle(3);
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
